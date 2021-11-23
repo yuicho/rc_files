@@ -1,0 +1,54 @@
+" set pasteを無効にして自動インデントさせる
+set nopaste
+
+" 構文ハイライト有効化
+syntax enable
+
+" tabキーでソフトタブ（スペース文字を使う）を挿入
+set expandtab
+
+" tabキーで挿入されるスペースの数
+set tabstop=4
+
+" 自動インデントでずれる幅の指定
+set shiftwidth=4
+
+" 連続した空白をタブとしてみなす
+set softtabstop=4
+
+" 改行時に前の行のインデントを継続する
+set autoindent
+
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+
+" 表示と保存のエンコード設定
+set encoding=utf-8
+set fileencoding=utf-8
+
+" 常にカーソル位置の上下5行を表示
+set scrolloff=5
+
+" 行番号を表示
+set number
+
+" カレント行ハイライトON
+set cursorline
+
+" アンダーラインを引く(color terminal)
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+
+" カラースキーマーの設定
+colorscheme desert
+
+" 前回閉じた位置にカーソルを移動させる
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
+" マウス無効化
+set mouse-=a
+
+" ~/.vimrcがなくてもdefaults.vimを読み込ませない
+let g:skip_defaults_vim = 1
