@@ -39,7 +39,7 @@ set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 
 " カラースキーマーの設定
-colorscheme desert
+"colorscheme desert
 
 " 前回閉じた位置にカーソルを移動させる
 augroup vimrcEx
